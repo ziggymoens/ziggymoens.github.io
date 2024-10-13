@@ -2,12 +2,59 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Griezeltocht</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halloween Surprise</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #ff7518;
+            font-family: 'Creepster', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        #play-button {
+            font-size: 1.5em;
+            padding: 15px 30px;
+            color: #fff;
+            background-color: #d32f2f;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        #play-button:hover {
+            transform: scale(1.1);
+            background-color: #c21807;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
 </head>
 <body>
-    <audio autoplay loop>
+<div>
+    <h1>🎃 Halloween Surprise 🎃</h1>
+    <button id="play-button">Play Spooky Sound</button>
+    <audio id="halloween-audio">
         <source src="sounds/Spooky%20Halloween%20Thunder.mp3" type="audio/mp3">
-        Your browser does not support the audio tag.
+        Your browser does not support the audio element.
     </audio>
+</div>
+<script>
+    const playButton = document.getElementById('play-button');
+    const audio = document.getElementById('halloween-audio');
+
+    playButton.addEventListener('click', () => {
+        audio.play();
+        playButton.innerText = "Playing...";
+        playButton.disabled = true;
+    });
+</script>
 </body>
 </html>
