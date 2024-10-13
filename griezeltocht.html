@@ -15,10 +15,13 @@
             height: 100vh;
             margin: 0;
             text-align: center;
+            overflow: hidden;
         }
         h1 {
             font-size: 3em;
             margin-bottom: 20px;
+            z-index: 2;
+            position: relative;
         }
         #play-button {
             font-size: 1.5em;
@@ -29,10 +32,23 @@
             border-radius: 10px;
             cursor: pointer;
             transition: transform 0.3s;
+            z-index: 2;
+            position: relative;
         }
         #play-button:hover {
             transform: scale(1.1);
             background-color: #c21807;
+        }
+        #scare-image {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            opacity: 0;
+            z-index: 1;
+            transition: opacity 0.3s;
         }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
@@ -41,20 +57,46 @@
 <div>
     <h1>🎃 Halloween Surprise 🎃</h1>
     <button id="play-button">Play Spooky Sound</button>
-    <audio id="halloween-audio">
+    <audio id="halloween-audio" loop>
         <source src="sounds/Spooky%20Halloween%20Thunder.mp3" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>
+    <img id="scare-image" src="sounds/Scary%20Witch%20Image%202024-10-13.webp" alt="Scary Image">
 </div>
 <script>
     const playButton = document.getElementById('play-button');
     const audio = document.getElementById('halloween-audio');
+    const scareImage = document.getElementById('scare-image');
 
     playButton.addEventListener('click', () => {
-        audio.play();
-        playButton.innerText = "Playing...";
-        playButton.disabled = true;
+        if (audio.paused) {
+            audio.play();
+            playButton.innerText = "Pause Spooky Sound";
+            triggerScareEffect();
+        } else {
+            audio.pause();
+            playButton.innerText = "Play Spooky Sound";
+            clearInterval(scareInterval);
+            hideScareImage();
+        }
     });
+
+    let scareInterval;
+
+    function triggerScareEffect() {
+        scareInterval = setInterval(() => {
+            showScareImage();
+            setTimeout(hideScareImage, 500);  // Hide image after 500ms
+        }, Math.random() * 10000 + 5000);  // Random interval between 5 to 15 seconds
+    }
+
+    function showScareImage() {
+        scareImage.style.opacity = 1;
+    }
+
+    function hideScareImage() {
+        scareImage.style.opacity = 0;
+    }
 </script>
 </body>
 </html>
