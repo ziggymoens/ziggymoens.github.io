@@ -1,404 +1,530 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Ziggy Moens - Digital Innovation & Technology Expert</title>
-    <meta property="og:image" content="https://ziggymoens.be/ZiggyMoensLogoBlack.png">
-    <meta name="description" content="Ziggy Moens - Passionate about digital transformation, continuous growth, and turning innovative ideas into reality. Digital innovation partner at Endare.">
-    <meta property="og:type" content="website">
-    <link rel="icon" type="image/png" sizes="411x410" href="assets/img/ZiggyMoensLogoBlack.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/modern-style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ziggy Moens · Odoo Solution Architect</title>
+<meta name="description" content="Ziggy Moens is an Odoo solution architect in Belgium. I design and deliver ERP implementations for companies that have outgrown their spreadsheets.">
+<meta name="author" content="Ziggy Moens">
+<link rel="canonical" href="https://ziggymoens.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ziggy Moens · Odoo Solution Architect">
+<meta property="og:description" content="I design and deliver ERP implementations for companies that have outgrown their spreadsheets.">
+<meta property="og:url" content="https://ziggymoens.github.io/">
+<meta property="og:image" content="https://ziggymoens.github.io/assets/img/ziggy-og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#12100e">
+<link rel="icon" href="assets/img/ZiggyMoensLogoBlack.png">
+<link rel="apple-touch-icon" href="assets/img/ZiggyMoensLogoBlack.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Ziggy Moens",
+  "jobTitle": "Odoo Solution Architect",
+  "url": "https://ziggymoens.github.io/",
+  "email": "mailto:ziggymns@gmail.com",
+  "address": { "@type": "PostalAddress", "addressCountry": "BE" },
+  "worksFor": { "@type": "Organization", "name": "dear digital" },
+  "alumniOf": [
+    { "@type": "CollegeOrUniversity", "name": "Stockholm University" },
+    { "@type": "CollegeOrUniversity", "name": "HOGENT" }
+  ],
+  "sameAs": [
+    "https://www.linkedin.com/in/ziggymoens/",
+    "https://github.com/ziggymoens"
+  ]
+}
+</script>
+<style>
+:root{
+  --paper:#f7f5f2;
+  --paper-2:#efece7;
+  --ink:#14120f;
+  --ink-2:#4a453e;
+  --ink-3:#7d766c;
+  --line:#ddd7cf;
+  --accent:#c2542a;
+  --accent-soft:#f0e0d6;
+  --card:#fffefc;
+  --shadow:0 1px 2px rgba(20,18,15,.05), 0 12px 32px -18px rgba(20,18,15,.35);
+  --radius:14px;
+  --maxw:1120px;
+  --display:"Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --sans:"Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --paper:#12100e;
+    --paper-2:#191612;
+    --ink:#f4f1ec;
+    --ink-2:#bab3a8;
+    --ink-3:#8c8478;
+    --line:#2c2823;
+    --accent:#e2743f;
+    --accent-soft:#332014;
+    --card:#191614;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 16px 40px -22px rgba(0,0,0,.9);
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth; scroll-padding-top:88px}
+@media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:var(--sans); font-size:17px; line-height:1.65;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+img{max-width:100%; height:auto; display:block}
+a{color:inherit}
+h1,h2,h3,h4{font-family:var(--display); font-weight:700; line-height:1.08; letter-spacing:-.02em; margin:0}
+p{margin:0 0 1rem}
+.wrap{width:100%; max-width:var(--maxw); margin-inline:auto; padding-inline:24px}
+.skip{position:absolute; left:-9999px}
+.skip:focus{left:16px; top:16px; z-index:99; background:var(--ink); color:var(--paper); padding:10px 16px; border-radius:8px}
+:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:4px}
+
+/* header */
+header{
+  position:sticky; top:0; z-index:50;
+  backdrop-filter:saturate(180%) blur(14px);
+  background:color-mix(in srgb, var(--paper) 82%, transparent);
+  border-bottom:1px solid transparent; transition:border-color .2s ease;
+}
+header.stuck{border-bottom-color:var(--line)}
+.bar{display:flex; align-items:center; justify-content:space-between; gap:24px; height:72px}
+.brand{display:flex; align-items:center; gap:12px; font-family:var(--display); font-weight:700; letter-spacing:-.01em; text-decoration:none}
+.mark{width:30px; height:30px; border:2px solid var(--ink); border-radius:7px; display:grid; place-items:center; font-size:12px; letter-spacing:.02em; flex:0 0 auto}
+nav ul{display:flex; gap:26px; list-style:none; margin:0; padding:0}
+nav a{
+  text-decoration:none; font-size:14.5px; font-weight:500; color:var(--ink-2);
+  padding:6px 0; border-bottom:2px solid transparent; transition:color .15s, border-color .15s;
+}
+nav a:hover{color:var(--ink)}
+nav a.active{color:var(--ink); border-bottom-color:var(--accent)}
+.nav-cta{
+  display:inline-flex; align-items:center; gap:8px; text-decoration:none;
+  background:var(--ink); color:var(--paper); font-weight:600; font-size:14.5px;
+  padding:10px 18px; border-radius:999px; transition:transform .15s ease, opacity .15s;
+}
+.nav-cta:hover{transform:translateY(-1px); opacity:.92}
+@media (max-width:860px){ nav{display:none} }
+
+/* hero */
+.hero{padding:76px 0 64px; border-bottom:1px solid var(--line)}
+.hero-grid{display:grid; grid-template-columns:1.25fr .75fr; gap:56px; align-items:center}
+.eyebrow{
+  display:inline-flex; align-items:center; gap:9px; font-size:13px; font-weight:600;
+  letter-spacing:.08em; text-transform:uppercase; color:var(--accent); margin-bottom:22px;
+}
+.dot{width:7px; height:7px; border-radius:50%; background:var(--accent); box-shadow:0 0 0 4px var(--accent-soft)}
+h1{font-size:clamp(2.6rem, 6vw, 4.35rem)}
+h1 .thin{color:var(--ink-3); display:block; font-weight:500}
+.lede{font-size:clamp(1.05rem, 1.7vw, 1.2rem); color:var(--ink-2); max-width:52ch; margin-top:22px}
+.cta-row{display:flex; flex-wrap:wrap; gap:12px; margin-top:32px}
+.btn{
+  display:inline-flex; align-items:center; gap:9px; text-decoration:none; font-weight:600; font-size:15px;
+  padding:13px 24px; border-radius:999px; border:1.5px solid var(--ink); transition:transform .15s ease, background .15s, color .15s;
+}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:var(--ink); color:var(--paper)}
+.btn-ghost{background:transparent; color:var(--ink)}
+.btn-ghost:hover{background:var(--ink); color:var(--paper)}
+.portrait{position:relative}
+.portrait img{
+  width:100%; aspect-ratio:4/5; object-fit:cover; object-position:center;
+  border-radius:var(--radius); box-shadow:var(--shadow); position:relative; z-index:2;
+}
+.portrait::after{
+  content:""; position:absolute; inset:18px -18px -18px 18px;
+  border:1.5px solid var(--accent); border-radius:var(--radius); z-index:1;
+}
+@media (max-width:860px){
+  .hero{padding:52px 0 46px}
+  .hero-grid{grid-template-columns:1fr; gap:40px}
+  .portrait{max-width:320px}
+}
+
+/* strip */
+.strip{background:var(--paper-2); border-bottom:1px solid var(--line)}
+.strip-grid{display:grid; grid-template-columns:repeat(4, 1fr); gap:2px}
+.stat{padding:28px 4px}
+.stat b{display:block; font-family:var(--display); font-size:1.75rem; letter-spacing:-.02em}
+.stat span{font-size:13.5px; color:var(--ink-3)}
+@media (max-width:760px){ .strip-grid{grid-template-columns:repeat(2,1fr)} }
+
+/* sections */
+section{padding:88px 0; border-bottom:1px solid var(--line)}
+.sec-head{margin-bottom:44px; max-width:62ch}
+.sec-num{font-family:var(--display); font-size:13px; color:var(--accent); letter-spacing:.14em; text-transform:uppercase; display:block; margin-bottom:12px}
+h2{font-size:clamp(1.9rem, 3.4vw, 2.6rem)}
+.sec-head p{color:var(--ink-2); margin-top:14px}
+.two-col{display:grid; grid-template-columns:1fr 1fr; gap:48px}
+@media (max-width:860px){ section{padding:64px 0} .two-col{grid-template-columns:1fr; gap:28px} }
+.pull{font-family:var(--display); font-size:1.3rem; line-height:1.4; color:var(--ink); border-left:3px solid var(--accent); padding-left:20px}
+
+/* timeline */
+.tl{list-style:none; margin:0; padding:0}
+.tl li{
+  display:grid; grid-template-columns:172px 1fr; gap:28px;
+  padding:28px 0; border-top:1px solid var(--line);
+}
+.tl li:first-child{border-top:none; padding-top:0}
+.tl .when{font-family:var(--display); font-size:14px; color:var(--ink-3); letter-spacing:.02em; padding-top:4px}
+.tl h3{font-size:1.22rem}
+.tl .where{color:var(--accent); font-weight:600; font-size:14.5px; margin:5px 0 10px}
+.tl p{color:var(--ink-2); margin:0; font-size:15.5px}
+.tags{display:flex; flex-wrap:wrap; gap:7px; margin-top:14px}
+.tag{
+  font-size:12.5px; font-weight:500; color:var(--ink-2);
+  border:1px solid var(--line); background:var(--card); padding:4px 11px; border-radius:999px;
+}
+.now{display:inline-block; font-size:11.5px; font-weight:700; letter-spacing:.06em; text-transform:uppercase;
+  color:var(--accent); background:var(--accent-soft); padding:3px 9px; border-radius:999px; margin-left:8px; vertical-align:2px}
+@media (max-width:700px){ .tl li{grid-template-columns:1fr; gap:8px} .tl .when{padding-top:0} }
+
+/* cards */
+.grid{display:grid; gap:18px}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g2{grid-template-columns:repeat(2,1fr)}
+@media (max-width:900px){ .g3{grid-template-columns:repeat(2,1fr)} }
+@media (max-width:640px){ .g3,.g2{grid-template-columns:1fr} }
+.card{
+  background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+  padding:26px; transition:transform .18s ease, box-shadow .18s ease, border-color .18s;
+}
+.card:hover{transform:translateY(-3px); box-shadow:var(--shadow); border-color:color-mix(in srgb, var(--accent) 40%, var(--line))}
+.card h3{font-size:1.08rem; margin-bottom:6px}
+.card .meta{font-size:13.5px; color:var(--ink-3); margin-bottom:12px}
+.card p{font-size:15px; color:var(--ink-2); margin:0}
+.card a.doc{display:inline-flex; align-items:center; gap:7px; margin-top:14px; font-size:14px; font-weight:600; color:var(--accent); text-decoration:none}
+.card a.doc:hover{text-decoration:underline}
+
+/* skills */
+.skillset{display:grid; grid-template-columns:220px 1fr; gap:24px; padding:24px 0; border-top:1px solid var(--line)}
+.skillset:first-of-type{border-top:none}
+.skillset h3{font-size:1.05rem; padding-top:3px}
+@media (max-width:700px){ .skillset{grid-template-columns:1fr; gap:10px} }
+
+/* contact */
+.contact{background:var(--paper-2)}
+.contact-grid{display:grid; grid-template-columns:1.1fr .9fr; gap:48px; align-items:start}
+@media (max-width:860px){ .contact-grid{grid-template-columns:1fr; gap:32px} }
+.links{list-style:none; margin:0; padding:0}
+.links li{border-top:1px solid var(--line)}
+.links li:last-child{border-bottom:1px solid var(--line)}
+.links a{
+  display:flex; align-items:center; justify-content:space-between; gap:16px;
+  padding:18px 4px; text-decoration:none; font-weight:600; transition:padding .18s ease, color .18s;
+}
+.links a:hover{padding-left:12px; color:var(--accent)}
+.links .sub{font-weight:400; font-size:14px; color:var(--ink-3)}
+.arrow{transition:transform .18s ease}
+.links a:hover .arrow{transform:translateX(4px)}
+
+footer{padding:40px 0; font-size:14px; color:var(--ink-3)}
+.foot{display:flex; flex-wrap:wrap; gap:14px; justify-content:space-between; align-items:center}
+footer a{text-decoration:none}
+footer a:hover{color:var(--accent)}
+
+.reveal{opacity:0; transform:translateY(14px)}
+.reveal.in{opacity:1; transform:none; transition:opacity .55s ease, transform .55s ease}
+@media (prefers-reduced-motion: reduce){ .reveal{opacity:1; transform:none} }
+</style>
 </head>
-
 <body>
-    <!-- Navigation -->
-    <nav class="navbar" id="mainNav">
-        <div class="nav-container">
-            <a class="nav-logo" href="#home">
-                <img src="assets/img/ZiggyMoensLogoBlack.png" alt="Ziggy Moens Logo" class="logo-img">
-            </a>
-            <div class="nav-menu" id="nav-menu">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#experience" class="nav-link">Experience</a>
-                <a href="#education" class="nav-link">Education</a>
-                <a href="#expertise" class="nav-link">Expertise</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </div>
-            <div class="nav-toggle" id="nav-toggle">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
+<a class="skip" href="#main">Skip to content</a>
+
+<header id="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="#top">
+      <span class="mark" aria-hidden="true">ZM</span>
+      <span>Ziggy Moens</span>
+    </a>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#expertise">Expertise</a></li>
+      </ul>
     </nav>
+    <a class="nav-cta" href="#contact">Get in touch</a>
+  </div>
+</header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1 class="hero-title">
-                        Hi, I'm <span class="highlight">Ziggy</span>
-                    </h1>
-                    <p class="hero-subtitle">
-                        Business Unit Manager at Endare, leading digital transformation and ERP solutions. Passionate about technology leadership and driving business innovation.
-                    </p>
-                    <div class="hero-buttons">
-                        <a href="#contact" class="btn btn-primary">Get in Touch</a>
-                        <a href="#experience" class="btn btn-secondary">View Experience</a>
-                    </div>
-                </div>
-                <div class="hero-image">
-                    <img src="assets/img/ziggy.png" alt="Ziggy Moens" class="profile-image">
-                </div>
-            </div>
+<main id="main">
+<div id="top"></div>
 
+<section class="hero" style="border-bottom:1px solid var(--line)">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow"><span class="dot"></span> Odoo solution architect · Belgium</span>
+      <h1>Turning operational complexity <span class="thin">into competitive advantage.</span></h1>
+      <p class="lede">I design and deliver Odoo and ERP implementations for companies that have outgrown their spreadsheets. Part business conversation about what the process should be, part technical one about how it actually gets built.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#contact">Let's talk</a>
+        <a class="btn btn-ghost" href="#work">See my work</a>
+      </div>
+    </div>
+    <div class="portrait">
+      <img src="assets/img/ziggy-headshot.jpg" width="1200" height="1500" alt="Portrait of Ziggy Moens" loading="eager">
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="wrap strip-grid">
+    <div class="stat"><b>5+ yrs</b><span>Odoo and ERP delivery</span></div>
+    <div class="stat"><b>2 yrs</b><span>Leading an ERP business unit</span></div>
+    <div class="stat"><b>MSc</b><span>IT Project Management</span></div>
+    <div class="stat"><b>Full stack</b><span>Developer background</span></div>
+  </div>
+</div>
+
+<section id="about" class="reveal">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">01 · About</span>
+      <h2>Between the business case and the build</h2>
+    </div>
+    <div class="two-col">
+      <div>
+        <p>I am an Odoo solution architect at <a href="https://www.deardigital.com">dear digital</a> and the owner of Zigmo Studio. My work starts long before anything gets configured: mapping how a company actually operates, deciding which parts of that are worth keeping, and translating the rest into a system people will still use in year three.</p>
+        <p>My background is full stack development, and before that I ran two repair franchises. That mix is the useful part. I can sit with a finance lead and with a developer in the same afternoon and lose nothing in translation.</p>
+        <p>In 2026 I finished an MSc in IT Project Management at Stockholm University. My thesis looked at how different stakeholder profiles experience involvement and influence during ERP transformations. The short version: being in the room is not the same as shaping the outcome, and that gap quietly becomes project risk.</p>
+      </div>
+      <div>
+        <p class="pull">Most ERP projects do not fail on the software. They fail on the processes nobody wanted to look at too closely.</p>
+        <div class="tags" style="margin-top:26px">
+          <span class="tag">Odoo</span><span class="tag">ERP architecture</span><span class="tag">Process design</span>
+          <span class="tag">Requirements</span><span class="tag">Stakeholder management</span><span class="tag">Python</span>
+          <span class="tag">PostgreSQL</span><span class="tag">Angular</span><span class="tag">Laravel</span>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">About Me</h2>
-                <p class="section-subtitle">Business Unit Manager and technology leader based in Bruges, Belgium</p>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>I'm a Business Unit Manager at Endare, leading the Odoo/ERP business unit and driving digital transformation initiatives. With extensive experience in technology leadership, project management, and software development, I specialize in helping organizations leverage technology to drive growth and optimize operations.</p>
-                    <p>My career spans from hands-on software development to strategic business leadership, giving me a unique perspective on technology implementation. I'm passionate about turning innovative ideas into practical solutions that deliver measurable business value and drive organizational success.</p>
-                </div>
-            </div>
+<section id="work" class="reveal">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">02 · Work</span>
+      <h2>Experience</h2>
+      <p>From writing the code, to running the projects, to owning the unit that delivers them.</p>
+    </div>
+    <ul class="tl">
+      <li>
+        <div class="when">2025 to now</div>
+        <div>
+          <h3>Solution Architect Odoo <span class="now">Current</span></h3>
+          <div class="where">dear digital · Ghent</div>
+          <p>Designing Odoo solutions for SMEs and mid-market companies: process analysis, functional architecture, scoping and delivery oversight. Freelance, working closely with the delivery teams and directly with client stakeholders.</p>
+          <div class="tags"><span class="tag">Solution architecture</span><span class="tag">Odoo 17 to 19</span><span class="tag">Requirements</span><span class="tag">Pre-sales</span></div>
         </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="experience">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Professional Experience</h2>
-                <p class="section-subtitle">My journey in technology leadership and digital innovation</p>
-            </div>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3>Business Unit Manager</h3>
-                            <span class="company">Endare - AI-accelerated digital innovation</span>
-                            <span class="period">September 2023 - Present</span>
-                        </div>
-                        <p>Managing the Odoo/ERP business unit within Endare, leading digital transformation initiatives and driving business growth through innovative technology solutions. Overseeing strategic planning, team leadership, and client relationship management.</p>
-                        <div class="tags">
-                            <span class="tag">Business Unit Management</span>
-                            <span class="tag">Odoo/ERP</span>
-                            <span class="tag">Digital Transformation</span>
-                            <span class="tag">Team Leadership</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3>Project Manager ERP</h3>
-                            <span class="company">Endare</span>
-                            <span class="period">February 2023 - September 2023</span>
-                        </div>
-                        <p>Managed Enterprise Resource Planning (ERP) projects, specializing in Odoo implementations. Led cross-functional teams, managed project timelines, and ensured successful delivery of complex technology solutions for enterprise clients.</p>
-                        <div class="tags">
-                            <span class="tag">ERP Project Management</span>
-                            <span class="tag">Odoo</span>
-                            <span class="tag">Team Leadership</span>
-                            <span class="tag">Enterprise Solutions</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3>Full-Stack Software Developer</h3>
-                            <span class="company">Endare</span>
-                            <span class="period">September 2021 - September 2023</span>
-                        </div>
-                        <p>Developed comprehensive software solutions including Progressive Web Apps, mobile applications, and enterprise systems. Technologies included Angular, Laravel, AWS, iOS development, and JavaScript frameworks. Contributed to multiple client projects and internal tools.</p>
-                        <div class="tags">
-                            <span class="tag">Full-Stack Development</span>
-                            <span class="tag">Angular</span>
-                            <span class="tag">Laravel</span>
-                            <span class="tag">iOS Development</span>
-                            <span class="tag">AWS</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3>Franchise Director</h3>
-                            <span class="company">ALO iPhone Repair & Leasing</span>
-                            <span class="period">September 2019 - December 2022</span>
-                        </div>
-                        <p>Successfully managed and operated iPhone repair franchises in Lokeren and Nieuwpoort. Led business operations, managed customer relationships, and oversaw technical repairs. Built a reputation for quality service and customer satisfaction.</p>
-                        <div class="tags">
-                            <span class="tag">Business Management</span>
-                            <span class="tag">Customer Service</span>
-                            <span class="tag">Technical Support</span>
-                            <span class="tag">Franchise Operations</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3>Founder</h3>
-                            <span class="company">ZIKKY</span>
-                            <span class="period">April 2019 - October 2021</span>
-                        </div>
-                        <p>Founded and operated a technology-focused business in the Ghent area. Developed business strategy, managed operations, and delivered innovative solutions to clients. Gained valuable entrepreneurial experience and problem-solving skills.</p>
-                        <div class="tags">
-                            <span class="tag">Entrepreneurship</span>
-                            <span class="tag">Business Strategy</span>
-                            <span class="tag">Problem Solving</span>
-                            <span class="tag">Innovation</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3>Web Developer</h3>
-                            <span class="company">TEDxKULeuven</span>
-                            <span class="period">August 2021 - Present</span>
-                        </div>
-                        <p>Responsible for developing and maintaining the TEDxKULeuven website using HTML, CSS, and Bootstrap framework. Managing all IT-related matters and ensuring smooth digital operations for the organization.</p>
-                        <div class="tags">
-                            <span class="tag">Web Development</span>
-                            <span class="tag">Bootstrap</span>
-                            <span class="tag">IT Management</span>
-                            <span class="tag">Website Maintenance</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3>System Administrator</h3>
-                            <span class="company">Zeus WPI</span>
-                            <span class="period">2017 - 2018</span>
-                        </div>
-                        <p>Board position at student association responsible for managing operating servers and websites of various student associations. Oversaw IT infrastructure and ensured reliable digital services for the student community.</p>
-                        <div class="tags">
-                            <span class="tag">System Administration</span>
-                            <span class="tag">Server Management</span>
-                            <span class="tag">IT Infrastructure</span>
-                            <span class="tag">Student Leadership</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      </li>
+      <li>
+        <div class="when">2025 to now</div>
+        <div>
+          <h3>Owner <span class="now">Current</span></h3>
+          <div class="where">Zigmo Studio</div>
+          <p>My own studio for independent ERP and digital transformation work, from short advisory tracks to full implementation guidance.</p>
+          <div class="tags"><span class="tag">Consulting</span><span class="tag">Entrepreneurship</span></div>
         </div>
-    </section>
-
-    <!-- Education Section -->
-    <section id="education" class="education">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Education & Certifications</h2>
-                <p class="section-subtitle">My academic background and professional development</p>
-            </div>
-            <div class="education-grid">
-                <div class="education-card">
-                    <div class="education-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <div class="education-content">
-                        <h3>Master of Science - Data and System Sciences</h3>
-                        <span class="institution">Stockholm University</span>
-                        <span class="period">August 2024 - June 2026</span>
-                        <p>Specialization in IT Project Management. Focus on project management and business development in technology-driven environments.</p>
-                    </div>
-                </div>
-                
-                <div class="education-card">
-                    <div class="education-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <div class="education-content">
-                        <h3>Postgraduate Degree - IT Management</h3>
-                        <span class="institution">Ghent University of Applied Sciences - HOGENT</span>
-                        <span class="period">September 2021 - June 2022</span>
-                        <p>Graduated with distinction. Advanced studies in IT management, project management, problem-solving, and analytical thinking.</p>
-                    </div>
-                </div>
-                
-                <div class="education-card">
-                    <div class="education-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <div class="education-content">
-                        <h3>Bachelor's Degree - Applied Information Technology</h3>
-                        <span class="institution">Ghent University of Applied Sciences - HOGENT</span>
-                        <span class="period">February 2018 - June 2021</span>
-                        <p>Graduated with great distinction. Comprehensive study covering web applications, mobile development (Android/iOS), databases, networking, and modern web technologies including Java, JavaScript, CSS, HTML, SQL, and C#.</p>
-                    </div>
-                </div>
-                
-                <div class="education-card">
-                    <div class="education-icon">
-                        <i class="fas fa-certificate"></i>
-                    </div>
-                    <div class="education-content">
-                        <h3>Micro Degree - Mainframe Expert</h3>
-                        <span class="institution">Ghent University of Applied Sciences - HOGENT</span>
-                        <span class="period">September 2022 - February 2023</span>
-                        <p>Specialized training in IBM Mainframe technologies including PL/1 and COBOL programming languages.</p>
-                    </div>
-                </div>
-            </div>
+      </li>
+      <li>
+        <div class="when">2023 to 2025</div>
+        <div>
+          <h3>Business Unit Manager</h3>
+          <div class="where">Endare · Ghent</div>
+          <p>Built and led the Odoo/ERP business unit: team, offering, delivery method and commercial strategy. Endare became an official Odoo partner during this period.</p>
+          <div class="tags"><span class="tag">Unit management</span><span class="tag">Team leadership</span><span class="tag">Partnerships</span><span class="tag">P&amp;L</span></div>
         </div>
-    </section>
-
-    <!-- Expertise Section -->
-    <section id="expertise" class="expertise">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Areas of Expertise</h2>
-                <p class="section-subtitle">Technologies and skills I work with</p>
-            </div>
-            <div class="expertise-grid">
-                <div class="expertise-card">
-                    <div class="expertise-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>Digital Transformation</h3>
-                    <p>Strategy Development, Process Optimization, Technology Implementation</p>
-                </div>
-                
-                <div class="expertise-card">
-                    <div class="expertise-icon">
-                        <i class="fas fa-lightbulb"></i>
-                    </div>
-                    <h3>Technology Consulting</h3>
-                    <p>Solution Architecture, Client Strategy, Project Management</p>
-                </div>
-                
-                <div class="expertise-card">
-                    <div class="expertise-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <h3>Full-Stack Development</h3>
-                    <p>Angular, Laravel, AWS, Modern Web Technologies</p>
-                </div>
-                
-                <div class="expertise-card">
-                    <div class="expertise-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3>IT Management</h3>
-                    <p>Strategic Planning, Team Leadership, Infrastructure Management</p>
-                </div>
-                
-                <div class="expertise-card">
-                    <div class="expertise-icon">
-                        <i class="fas fa-database"></i>
-                    </div>
-                    <h3>System Administration</h3>
-                    <p>Server Management, IT Infrastructure, Technical Support</p>
-                </div>
-                
-                <div class="expertise-card">
-                    <div class="expertise-icon">
-                        <i class="fas fa-certificate"></i>
-                    </div>
-                    <h3>Professional Certifications</h3>
-                    <p>Mainframe Programming, AI Fundamentals, Digital Marketing</p>
-                </div>
-            </div>
+      </li>
+      <li>
+        <div class="when">2023</div>
+        <div>
+          <h3>ERP Project Manager</h3>
+          <div class="where">Endare · Ghent</div>
+          <p>Ran Odoo implementation projects end to end: planning, cross-functional teams, client communication and delivery of complex enterprise scopes.</p>
+          <div class="tags"><span class="tag">Project management</span><span class="tag">Odoo</span><span class="tag">Delivery</span></div>
         </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Let's Connect</h2>
-                <p class="section-subtitle">Interested in discussing technology opportunities or digital transformation projects?</p>
-            </div>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Email</h4>
-                            <a href="mailto:ziggymoens@hotmail.com">ziggymoens@hotmail.com</a>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fab fa-linkedin"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>LinkedIn</h4>
-                            <a href="https://www.linkedin.com/in/ziggymoens/" target="_blank">Connect on LinkedIn</a>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fab fa-github"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>GitHub</h4>
-                            <a href="https://github.com/ziggymoens" target="_blank">View Projects</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="contact-actions">
-                    <a href="assets/img/Ziggy-Moens-CV.png" class="btn btn-primary" download>
-                        <i class="fas fa-download"></i>
-                        Download CV
-                    </a>
-                </div>
-            </div>
+      </li>
+      <li>
+        <div class="when">2021 to 2023</div>
+        <div>
+          <h3>Full-Stack Software Developer</h3>
+          <div class="where">Endare · Ghent</div>
+          <p>Built web and mobile applications for clients: progressive web apps, back ends and integrations with Angular, React, Laravel, PHP and AWS.</p>
+          <div class="tags"><span class="tag">Angular</span><span class="tag">React</span><span class="tag">Laravel</span><span class="tag">AWS</span><span class="tag">MySQL</span></div>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <img src="assets/img/ZiggyMoensLogoBlack.png" alt="Ziggy Moens Logo" class="footer-logo-img">
-                </div>
-                <div class="footer-text">
-                    <p>&copy; 2025 Ziggy Moens. All rights reserved.</p>
-                </div>
-                <div class="footer-social">
-                    <a href="https://www.linkedin.com/in/ziggymoens/" target="_blank" class="social-link">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="https://github.com/ziggymoens" target="_blank" class="social-link">
-                        <i class="fab fa-github"></i>
-                    </a>
-                </div>
-            </div>
+      </li>
+      <li>
+        <div class="when">2019 to 2022</div>
+        <div>
+          <h3>Franchise Director</h3>
+          <div class="where">ALO iPhone Repair · Lokeren and Nieuwpoort</div>
+          <p>Ran two repair franchises: operations, staffing, pricing and customer service, alongside my studies. My first real lesson in how a small business actually keeps score.</p>
+          <div class="tags"><span class="tag">Operations</span><span class="tag">Customer service</span><span class="tag">Small business</span></div>
         </div>
-    </footer>
+      </li>
+      <li>
+        <div class="when">Earlier</div>
+        <div>
+          <h3>Web Developer at TEDxKULeuven · System Administrator at Zeus WPI</h3>
+          <div class="where">2017 to 2021</div>
+          <p>Built and maintained the TEDxKULeuven website and handled the IT side of the event. Before that, a board position at Zeus WPI looking after the servers and websites of several student associations.</p>
+          <div class="tags"><span class="tag">Web development</span><span class="tag">Linux</span><span class="tag">Servers</span></div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
 
-    <script src="assets/js/modern-script.js"></script>
+<section id="education" class="reveal">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">03 · Education</span>
+      <h2>Degrees and certifications</h2>
+      <p>Diplomas and certificates are archived in my <a href="https://github.com/ziggymoens/ziggymoens">credentials repository</a>.</p>
+    </div>
+    <div class="grid g3">
+      <div class="card">
+        <h3>MSc Data and Systems Sciences</h3>
+        <div class="meta">Stockholm University · 2024 to 2026</div>
+        <p>Specialisation in IT Project Management. Thesis on stakeholder involvement versus real influence in ERP transformation, a qualitative case study of a Belgian SME implementing Odoo.</p>
+        <a class="doc" href="https://github.com/ziggymoens/ziggymoens/blob/main/education/MasterofScience-ITProjectManagement/Filosofie-Magisterexamen.pdf">View diploma</a>
+      </div>
+      <div class="card">
+        <h3>Postgraduate IT Management</h3>
+        <div class="meta">HOGENT · 2021 to 2022</div>
+        <p>Graduated with distinction. IT management, project management and analytical problem solving in technology-driven organisations.</p>
+        <a class="doc" href="https://github.com/ziggymoens/ziggymoens/blob/main/education/ITManagement/IT-Management-en.pdf">View diploma</a>
+      </div>
+      <div class="card">
+        <h3>Bachelor Applied Information Technology</h3>
+        <div class="meta">HOGENT · 2018 to 2021</div>
+        <p>Graduated with great distinction. Web and mobile applications, databases, networking and software engineering across Java, JavaScript, SQL and C#.</p>
+        <a class="doc" href="https://github.com/ziggymoens/ziggymoens/blob/main/education/AppliedInformationTechnology/Applied-Information-Technology-en.pdf">View diploma</a>
+      </div>
+      <div class="card">
+        <h3>Micro Degree Mainframe Expert</h3>
+        <div class="meta">HOGENT · 2022 to 2023</div>
+        <p>IBM mainframe technologies: z/OS, JCL, PL/1 and COBOL, completed alongside eight Interskill certification badges.</p>
+        <a class="doc" href="https://github.com/ziggymoens/ziggymoens/blob/main/education/MainframeExpert/Mainframe-expert.pdf">View diploma</a>
+      </div>
+      <div class="card">
+        <h3>Odoo 16 Functional Certification</h3>
+        <div class="meta">Odoo S.A. · 2023</div>
+        <p>Official Odoo functional certification, plus the partner onboarding track for project leaders in Odoo.</p>
+        <a class="doc" href="https://github.com/ziggymoens/ziggymoens/blob/main/certificates/Certification.pdf">View certificate</a>
+      </div>
+      <div class="card">
+        <h3>Bachelor Computer Science</h3>
+        <div class="meta">Ghent University · 2016 to 2018</div>
+        <p>Two years of computer science before switching to applied IT, where the balance between theory and building things suited me better.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="expertise" class="reveal">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">04 · Expertise</span>
+      <h2>What I actually do</h2>
+    </div>
+    <div class="skillset">
+      <h3>ERP and Odoo</h3>
+      <div class="tags">
+        <span class="tag">Solution architecture</span><span class="tag">Process mapping</span><span class="tag">Fit gap analysis</span>
+        <span class="tag">Data migration</span><span class="tag">Odoo Studio and custom modules</span><span class="tag">Integrations</span>
+      </div>
+    </div>
+    <div class="skillset">
+      <h3>Project delivery</h3>
+      <div class="tags">
+        <span class="tag">Scoping and estimation</span><span class="tag">Stakeholder management</span><span class="tag">Requirements engineering</span>
+        <span class="tag">Change management</span><span class="tag">Agile delivery</span><span class="tag">Workshops</span>
+      </div>
+    </div>
+    <div class="skillset">
+      <h3>Engineering</h3>
+      <div class="tags">
+        <span class="tag">Python</span><span class="tag">PostgreSQL</span><span class="tag">JavaScript and TypeScript</span>
+        <span class="tag">Angular</span><span class="tag">React</span><span class="tag">Laravel and PHP</span><span class="tag">Docker</span><span class="tag">Git</span>
+      </div>
+    </div>
+    <div class="skillset">
+      <h3>Leadership</h3>
+      <div class="tags">
+        <span class="tag">Business unit management</span><span class="tag">Team building</span><span class="tag">Commercial strategy</span>
+        <span class="tag">Partner relations</span><span class="tag">Coaching</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact reveal">
+  <div class="wrap contact-grid">
+    <div>
+      <span class="sec-num">05 · Contact</span>
+      <h2>Have a process that needs untangling?</h2>
+      <p style="color:var(--ink-2); margin-top:14px; max-width:46ch">Whether you are considering Odoo, halfway through an implementation that has stalled, or just want a second opinion on a scope, I am happy to think along.</p>
+    </div>
+    <ul class="links">
+      <li><a href="mailto:ziggymns@gmail.com"><span>Email<br><span class="sub">ziggymns@gmail.com</span></span><span class="arrow">&rarr;</span></a></li>
+      <li><a href="https://www.linkedin.com/in/ziggymoens/"><span>LinkedIn<br><span class="sub">Connect and read what I write</span></span><span class="arrow">&rarr;</span></a></li>
+      <li><a href="https://github.com/ziggymoens"><span>GitHub<br><span class="sub">Code, credentials and side projects</span></span><span class="arrow">&rarr;</span></a></li>
+      <li><a href="https://github.com/ziggymoens/ziggymoens/blob/main/CurriculumVitae.pdf"><span>Curriculum vitae<br><span class="sub">PDF</span></span><span class="arrow">&rarr;</span></a></li>
+    </ul>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>&copy; 2026 Ziggy Moens</span>
+    <span>Built and hosted on <a href="https://github.com/ziggymoens/ziggymoens.github.io">GitHub Pages</a></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var header = document.getElementById('site-header');
+  var sections = Array.prototype.slice.call(document.querySelectorAll('section[id]'));
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll('nav a'));
+
+  function onScroll(){
+    header.classList.toggle('stuck', window.scrollY > 8);
+  }
+  onScroll();
+  window.addEventListener('scroll', onScroll, {passive:true});
+
+  if ('IntersectionObserver' in window) {
+    var spy = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (!e.isIntersecting) return;
+        navLinks.forEach(function(a){
+          a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id);
+        });
+      });
+    }, {rootMargin:'-45% 0px -50% 0px'});
+    sections.forEach(function(s){ spy.observe(s); });
+
+    var reveal = new IntersectionObserver(function(entries, obs){
+      entries.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); }
+      });
+    }, {rootMargin:'0px 0px -8% 0px'});
+    document.querySelectorAll('.reveal').forEach(function(el){ reveal.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
+  }
+})();
+</script>
 </body>
 </html>
